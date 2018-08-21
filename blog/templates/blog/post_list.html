@@ -9,7 +9,7 @@
 		</div>
 
 		<div>
-		<p>published: 20.08.2018, 13:01</p>
+		<!-- <p>published: 20.08.2018, 13:01</p>
 		<h2><a href="">My first post</a></h2>
 		<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi po
 rta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum mass
@@ -19,7 +19,15 @@ a justo sit amet risus.</p>
 		<div>
 		<p>published: 20.08.2018, 13:03</p>
 		<h2><a href="">My second post</a></h2>
-		<p>欢迎来到我的第一个博客网站！</p>
+		<p>欢迎来到我的第一个博客网站！</p> -->
+		{% for post in posts %}
+			<div>
+				<p>published: {{ post.published_date }}</p>
+				<h1><a href="">{{ post.title }}</a></h1>
+				<p>{{ post.text|linebreaksbr}}</p>
+			</div>
+		{% endfor %}
+
 		</div>
 	</body>
 </html>
